@@ -385,7 +385,7 @@ else
 	dump_alpine_keys "$rootfs"/etc/apk/keys/
 fi
 
-_apk add --root "$rootfs" --update-cache --initdb $rootfs_pkgs >&2
+_apk add --root "$rootfs" --initdb $rootfs_pkgs >&2
 
 if ! [ -f "$rootfs"/etc/alpine-release ]; then
 	if _apk info --root "$rootfs" --quiet alpine-release >/dev/null; then
